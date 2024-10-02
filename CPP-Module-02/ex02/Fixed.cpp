@@ -15,7 +15,7 @@ Fixed::Fixed(float const value)
 
 Fixed::Fixed(const Fixed &fixed)
 {
-	_value = fixed._value;
+	setRawBits(fixed.getRawBits());
 }
 
 Fixed &Fixed::operator=(const Fixed &fixed)

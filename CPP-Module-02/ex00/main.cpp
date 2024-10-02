@@ -1,13 +1,15 @@
 #include "Fixed.hpp"
 
-int main(void)
+int main( void )
 {
-	double a = 0.1;
-	float b =0.2;
-	while (b != 2)
-	{
-		b += a;
-		std::cout << b << std::endl;
-	}
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+	b.setRawBits(10);
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 
+	return 0;
 }
