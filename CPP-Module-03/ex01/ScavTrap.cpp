@@ -43,14 +43,9 @@ void ScavTrap::attack(const std::string &target)
 {
 	if (_energyPoints == 0 || _hitPoints == 0)
 		std::cout << RED << "ScavTrap " << _name << " is not ready to attack!" << RESET << std::endl;
-	else if (_attackDamage == 0)
-		std::cout << RED << "ScavTrap " << _name << " has no attack!" << RESET << std::endl;
-
-	else if (target == "")
-		std::cout << RED << "ScavTrap " << _name << " has no target!" << RESET << std::endl;
 	else
 	{
-		_energyPoints--;
 		std::cout << PURPLE << "ScavTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << RESET << std::endl;
+		_energyPoints--;
 	}
 }

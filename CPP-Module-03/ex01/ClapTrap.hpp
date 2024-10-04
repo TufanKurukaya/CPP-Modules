@@ -3,7 +3,7 @@
 #include <iostream>
 
 #define ORANGE "\033[38;5;208m"
-#define GREEN "\033[38;5;47m"
+#define GREEN "\033[38;5;41m"
 #define BLUE "\033[38;5;27m"
 #define RED "\033[38;5;160m"
 #define YELLOW "\033[38;5;226m"
@@ -30,9 +30,6 @@ class ClapTrap
 		int getHitPoints() const;
 		int getEnergyPoints() const;
 		int getAttackDamage() const;
-		void setName(std::string name);
-		void setHitPoints(unsigned int hitPoints);
-		void setEnergyPoints(unsigned int energyPoints);
-		void setAttackDamage(unsigned int attackDamage);
 		~ClapTrap();
 };
+
