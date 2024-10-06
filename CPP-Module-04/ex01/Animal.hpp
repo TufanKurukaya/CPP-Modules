@@ -27,6 +27,5 @@ class Animal
 		Animal &operator=(const Animal &copy);
 		virtual ~Animal();
 		const string &getType() const;
-		void setType(const string type);
 		virtual void makeSound() const;
 };

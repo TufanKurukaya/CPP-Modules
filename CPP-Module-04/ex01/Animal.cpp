@@ -13,20 +13,15 @@ Animal::Animal(string type) : _type(type)
 Animal::Animal(const Animal &copy)
 {
 	cout << "Animal copy constructor called" << endl;
-	setType(copy._type);
+	_type = copy._type;
 }
 
 Animal &Animal::operator=(const Animal &copy)
 {
 	if (this == &copy)
 		return *this;
-	setType(copy._type);
+	_type = copy._type;
 	return *this;
-}
-
-void Animal::setType(string type)
-{
-	_type = type;
 }
 
 const string &Animal::getType(void) const

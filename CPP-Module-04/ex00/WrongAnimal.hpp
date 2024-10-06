@@ -15,17 +15,17 @@ using std::string;
 #define CYAN "\033[38;5;51m"
 #define RESET "\033[0m"
 
-class Animal
+class WrongAnimal
 {
 	protected:
 		string _type;
 
 	public:
-		Animal();
-		Animal(string type);
-		Animal(const Animal &copy);
-		Animal &operator=(const Animal &copy);
-		virtual ~Animal();
+		WrongAnimal();
+		WrongAnimal(string type);
+		WrongAnimal(const WrongAnimal &copy);
+		WrongAnimal &operator=(const WrongAnimal &copy);
+		~WrongAnimal();
 		const string &getType() const;
-		virtual void makeSound() const;
+		void makeSound() const;
 };

@@ -1,6 +1,8 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -14,7 +16,6 @@ int main()
 	}
 	{
 		cout << GREEN << "\n----------====EXIRCISE II====---------\n" << ORANGE << endl;
-
 		const Animal *meta = new Animal();
 		const Animal *j = new Dog();
 		const Animal *i = new Cat();
@@ -25,6 +26,16 @@ int main()
 		meta->makeSound();
 		delete meta;
 		delete j;
+		delete i;
+	}
+	{
+		cout << GREEN << "\n----------====EXIRCISE II====---------\n" << ORANGE << endl;
+		const WrongAnimal *meta = new WrongAnimal();
+		const WrongAnimal *i = new WrongCat();
+		std::cout << i->getType() << " " << std::endl;
+		i->makeSound(); // will output the Worng animal sound!
+		meta->makeSound();
+		delete meta;
 		delete i;
 	}
 	cout << RESET;

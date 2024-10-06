@@ -32,7 +32,7 @@ void Cat::makeSound() const
 
 void Cat::setBrain(const Brain &brain)
 {
-	*_brain = brain;
+	_brain->setIdeas(brain.getIdea(0));
 }
 
 void Cat::printIdeas() const
@@ -51,7 +51,11 @@ void Cat::printIdeas() const
 			}
 		}
 	}
+}
 
+const string &Cat::getType(void) const
+{
+	return _type;
 }
 
 Cat::~Cat()

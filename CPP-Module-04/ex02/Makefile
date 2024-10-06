@@ -1,19 +1,17 @@
-NAME = Animal
+NAME = Abstract
 
-SRCS =	Animal.cpp		\
-		Cat.cpp			\
-		Dog.cpp			\
-		main.cpp		\
-		WrongCat.cpp	\
-		WrongAnimal.cpp
-
+SRCS =	Animal.cpp	\
+		Cat.cpp		\
+		Dog.cpp		\
+		main.cpp	\
+		Brain.cpp
 OBJ_DIR = .objs
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS =# -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 

@@ -36,23 +36,22 @@ void Dog::printIdeas() const
 {
 	if (_brain->getIdea(0) == "I have no idea!")
 	{
-		cout << "Dog has no idea!" << endl;
+		cout << "Cat has no idea!" << endl;
 	}
 	else
 	{
 		for (size_t i = 0; i < 100; i++)
 		{
-			if (_brain->getIdea(i).compare("I have no idea!") != 0)
+			if (_brain->getIdea(i) != "I have no idea!")
 			{
 				cout << _brain->getIdea(i) << endl;
 			}
 		}
 	}
-
 }
 
 void Dog::setBrain(const Brain &brain)
 {
-	*_brain = brain;
+	_brain->setIdeas(brain.getIdea(0));
 }
 

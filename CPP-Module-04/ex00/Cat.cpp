@@ -8,13 +8,10 @@ Cat::Cat() : Animal("Cat")
 Cat::Cat(const Cat &copy) : Animal(copy)
 {
 	cout << "I'm pretty sure I saw a cat." << endl;
-	*this = copy;
 }
 
 Cat &Cat::operator=(const Cat &copy)
 {
-	if (this == &copy)
-		return *this;
 	Animal::operator=(copy);
 	return *this;
 }

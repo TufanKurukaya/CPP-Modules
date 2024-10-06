@@ -9,6 +9,7 @@ Brain::Brain()
 
 Brain &Brain::operator=(const Brain &copy)
 {
+	std::cout << "Brain assigned!" << std::endl;
 	if (this == &copy)
 		return *this;
 	for (size_t i = 0; i < 100; i++)

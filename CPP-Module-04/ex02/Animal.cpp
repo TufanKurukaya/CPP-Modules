@@ -24,11 +24,6 @@ Animal &Animal::operator=(const Animal &copy)
 	return *this;
 }
 
-const string &Animal::getType(void) const
-{
-	return _type;
-}
-
 Animal::~Animal()
 {
 	cout << "Animal " << _type << " is Dead!" << endl;
