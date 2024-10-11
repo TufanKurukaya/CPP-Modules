@@ -5,9 +5,9 @@ SRCS =	main.cpp	\
 
 OBJ_DIR = .objs
 
-OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
+OBJS = $($(OBJ_DIR)/, $(SRCS:.cpp=.o))
 
-CXX = c++
+CXX = g++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
