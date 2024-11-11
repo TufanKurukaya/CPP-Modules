@@ -1,11 +1,12 @@
-#pragma once
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 #include <iostream>
-
+#include "AForm.hpp"
 using std::cerr;
-using std::cout;
 using std::endl;
 using std::string;
+using std::cout;
 
 class Bureaucrat
 {
@@ -23,6 +24,8 @@ class Bureaucrat
 		void incrementGrade();
 		void decrementGrade();
 		~Bureaucrat();
+		void signForm(AForm &);
+		void executeForm(AForm const &);
 		class GradeTooHighException : public std::exception
 		{
 			const char *what() const throw();
@@ -31,6 +34,12 @@ class Bureaucrat
 		{
 			const char *what() const throw();
 		};
+		class FormAlreadySignedException : public std::exception
+		{
+			const char *what() const throw();
+		};
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
+
+#endif

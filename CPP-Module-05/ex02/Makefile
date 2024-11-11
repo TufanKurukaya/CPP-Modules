@@ -1,7 +1,11 @@
-NAME = Bureaucrat
+NAME = Form
 
 SRCS =	main.cpp \
-		Bureaucrat.cpp
+		Bureaucrat.cpp \
+		AForm.cpp \
+		ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp \
+		PresidentialPardonForm.cpp
 
 OBJ_DIR = .objs
 

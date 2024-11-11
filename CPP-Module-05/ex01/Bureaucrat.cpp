@@ -62,8 +62,30 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 	return "Grade is too low!";
 }
 
+const char *Bureaucrat::FormAlreadySignedException::what() const throw()
+{
+	return "Form is already signed!";
+}
+
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 {
 	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 	return out;
+}
+
+
+
+//<bureaucrat> signed <form>
+//<bureaucrat> couldn’t sign <form> because <reason>.
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		cout << _name << " signed " << form.GetName() << endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << _name << " couldn’t sign " << form.GetName() << " because " << e.what() << "." << endl;;
+	}
 }
