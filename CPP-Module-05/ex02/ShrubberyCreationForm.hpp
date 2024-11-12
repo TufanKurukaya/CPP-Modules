@@ -12,7 +12,10 @@ class ShrubberyCreationForm : public AForm
 		bool _signed;
 		const string _name;
 	public:
+		bool GetSigned() const;
 		ShrubberyCreationForm();
+		ShrubberyCreationForm(const ShrubberyCreationForm &);
+		const ShrubberyCreationForm &operator=(const ShrubberyCreationForm &);
 		ShrubberyCreationForm(const string &name);
 		~ShrubberyCreationForm();
 		void beSigned(const Bureaucrat &bureaucrat);

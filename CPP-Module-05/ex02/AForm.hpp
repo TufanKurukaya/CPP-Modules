@@ -24,7 +24,7 @@ class AForm
 		const AForm &operator=(const AForm &);
 		~AForm();
 		const string &GetName() const;
-		bool GetSigned() const;
+		virtual bool GetSigned() const;
 		const int &GetSignGrade() const;
 		const int &GetExecGrade() const;
 		virtual void beSigned(const Bureaucrat &bureaucrat) = 0;

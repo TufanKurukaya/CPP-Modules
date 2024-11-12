@@ -5,38 +5,37 @@
 #include <iostream>
 
 int main() {
-    try {
-        // Bürokrat oluşturma
-        Bureaucrat highRank("Alice", 1);    // Derece 1 (en yüksek)
-        Bureaucrat lowRank("Bob", 150);     // Derece 150 (en düşük)
+	try {
+		Bureaucrat highRank("Alice", 1);
+		Bureaucrat lowRank("Bob", 150);
 
-        // Formları oluşturma
-        ShrubberyCreationForm shrubbery("Home");
-        RobotomyRequestForm robotomy("Bender");
-        PresidentialPardonForm pardon("Zaphod");
+		ShrubberyCreationForm shrubbery("Home");
+		RobotomyRequestForm robotomy("Bender");
+		PresidentialPardonForm pardon("Zaphod");
 
-        // Form bilgilerini görüntüleme
-        std::cout << shrubbery << std::endl;
-        std::cout << robotomy << std::endl;
-        std::cout << pardon << std::endl;
+		std::cout << shrubbery << "\n" << std::endl;
+		std::cout << robotomy << "\n" << std::endl;
+		std::cout << pardon << "\n" << std::endl;
 
-        // Formları imzalama girişimi
-        std::cout << "\n-- Formları İmzalama --" << std::endl;
-        lowRank.signForm(shrubbery); // Yetersiz dereceli bürokrat
-        highRank.signForm(shrubbery); // Başarılı imzalama
-        highRank.signForm(robotomy); // Başarılı imzalama
-        highRank.signForm(pardon); // Başarılı imzalama
+		std::cout << "\n-- Formları İmzalama --" << std::endl;
+		lowRank.signForm(shrubbery);
+		highRank.signForm(shrubbery);
+		highRank.signForm(robotomy);
+		highRank.signForm(pardon);
+		std::cout << std::endl;
+		std::cout << shrubbery << "\n" << std::endl;
+		std::cout << robotomy << "\n" << std::endl;
+		std::cout << pardon << "\n" << std::endl;
 
-        // Formları yürütme girişimi
-        std::cout << "\n-- Formları Yürütme --" << std::endl;
-        lowRank.executeForm(shrubbery); // Yetersiz derece ile yürütme
-        highRank.executeForm(shrubbery); // Başarılı yürütme
-        highRank.executeForm(robotomy); // Başarılı yürütme (rastgele sonuç)
-        highRank.executeForm(pardon); // Başarılı yürütme
+		std::cout << "\n-- Formları Yürütme --" << std::endl;
+		lowRank.executeForm(shrubbery);
+		highRank.executeForm(shrubbery);
+		highRank.executeForm(robotomy);
+		highRank.executeForm(pardon);
+		std::cout << std::endl;
+	} catch (const std::exception &e) {
+		std::cerr << "Hata: " << e.what() << std::endl;
+	}
 
-    } catch (const std::exception &e) {
-        std::cerr << "Hata: " << e.what() << std::endl;
-    }
-
-    return 0;
+	return 0;
 }

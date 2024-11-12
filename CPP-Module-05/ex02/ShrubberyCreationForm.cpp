@@ -4,9 +4,22 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 
 {
 }
 
-
 ShrubberyCreationForm::ShrubberyCreationForm(const string &name) : AForm(name, 145, 137)
 {
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &oder) : AForm(oder), _signed(oder._signed), _name(oder._name)
+{
+}
+
+const ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &oder)
+{
+	if (this != &oder)
+	{
+		AForm::operator=(oder);
+		_signed = oder._signed;
+	}
+	return *this;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
@@ -20,6 +33,11 @@ void ShrubberyCreationForm::beSigned(const Bureaucrat &bureaucrat)
 	if (_signed == true)
 		throw FormAlreadySignedException();
 	_signed = true;
+}
+
+bool ShrubberyCreationForm::GetSigned() const
+{
+	return _signed;
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const

@@ -10,7 +10,10 @@ class PresidentialPardonForm : public AForm
 		bool _signed;
 		const string _name;
 	public:
+		bool GetSigned() const;
 		PresidentialPardonForm();
+		PresidentialPardonForm(const PresidentialPardonForm &);
+		const PresidentialPardonForm &operator=(const PresidentialPardonForm &);
 		PresidentialPardonForm(const string &name);
 		~PresidentialPardonForm();
 		void beSigned(const Bureaucrat &bureaucrat);

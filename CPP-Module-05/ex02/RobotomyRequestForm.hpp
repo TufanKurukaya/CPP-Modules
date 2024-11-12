@@ -10,7 +10,10 @@ class RobotomyRequestForm : public AForm
 		bool _signed;
 		const string _name;
 	public:
+		bool GetSigned() const;
 		RobotomyRequestForm();
+		RobotomyRequestForm(const RobotomyRequestForm &);
+		const RobotomyRequestForm &operator=(const RobotomyRequestForm &);
 		RobotomyRequestForm(const string &name);
 		~RobotomyRequestForm();
 		void beSigned(const Bureaucrat &bureaucrat);
