@@ -4,11 +4,11 @@ bool RobotomyRequestForm::GetSigned() const
 {
 	return _signed;
 }
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45) , _signed(false)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const string &name) : AForm(name, 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(const string &name) : AForm(name, 72, 45) , _signed(false), _name(name)
 {
 }
 

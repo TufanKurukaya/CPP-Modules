@@ -5,7 +5,7 @@ bool PresidentialPardonForm::GetSigned() const
 	return _signed;
 }
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5)
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5) , _signed(false)
 {
 }
 
@@ -23,7 +23,7 @@ const PresidentialPardonForm &PresidentialPardonForm::operator=(const Presidenti
 	return *this;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const string &name) : AForm(name, 25, 5)
+PresidentialPardonForm::PresidentialPardonForm(const string &name) : AForm(name, 25, 5) , _signed(false), _name(name)
 {
 }
 

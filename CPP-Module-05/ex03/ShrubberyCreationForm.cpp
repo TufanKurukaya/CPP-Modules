@@ -1,10 +1,10 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137) , _signed(false)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const string &name) : AForm(name, 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(const string &name) : AForm(name, 145, 137) , _signed(false), _name(name)
 {
 }
 
