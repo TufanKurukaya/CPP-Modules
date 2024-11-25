@@ -16,7 +16,7 @@ int main() {
 	// Geçersiz form
 	AForm* invalidForm = someRandomIntern.makeForm("invalid form", "Nowhere");
 	if (invalidForm == NULL)
-		std::cout << "Invalid form is NULL" << std::endl;
+		cout << "Invalid form is NULL" << endl;
 	delete shrubberyForm;
 	delete robotomyForm;
 	delete pardonForm;

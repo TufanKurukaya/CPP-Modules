@@ -12,7 +12,7 @@ int main()
 		bob.incrementGrade();
 	}
 	catch (const std::exception &e) {
-		cerr << "Caught an exception: " << e.what() << endl;
+		cout << "Caught an exception: " << e.what() << endl;		
 	}
 
 	cout << endl;
@@ -23,7 +23,7 @@ int main()
 		cout << jim << endl;
 	}
 	catch (const std::exception &e) {
-		cerr << "Caught an exception while creating Jim: " << e.what() << endl;
+		cout << "Caught an exception while creating Jim: " << e.what() << endl;
 	}
 
 	cout << endl;
@@ -38,7 +38,7 @@ int main()
 	}
 	catch (const std::exception &e)
 	{
-		cerr << "Caught an exception: " << e.what() << endl;
+		cout << "Caught an exception: " << e.what() << endl;
 	}
 
 	return 0;

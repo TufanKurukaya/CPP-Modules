@@ -13,29 +13,29 @@ int main() {
 		RobotomyRequestForm robotomy("Bender");
 		PresidentialPardonForm pardon("Zaphod");
 
-		std::cout << shrubbery << "\n" << std::endl;
-		std::cout << robotomy << "\n" << std::endl;
-		std::cout << pardon << "\n" << std::endl;
+		cout << shrubbery << "\n" << endl;
+		cout << robotomy << "\n" << endl;
+		cout << pardon << "\n" << endl;
 
-		std::cout << "\n-- Formları İmzalama --" << std::endl;
+		cout << "\n-- Formları İmzalama --" << endl;
 		lowRank.signForm(shrubbery);
 		highRank.signForm(shrubbery);
 		highRank.signForm(robotomy);
 		highRank.signForm(pardon);
 		highRank.signForm(pardon);
-		std::cout << std::endl;
-		std::cout << shrubbery << "\n" << std::endl;
-		std::cout << robotomy << "\n" << std::endl;
-		std::cout << pardon << "\n" << std::endl;
+		cout << endl;
+		cout << shrubbery << "\n" << endl;
+		cout << robotomy << "\n" << endl;
+		cout << pardon << "\n" << endl;
 
-		std::cout << "\n-- Formları Yürütme --" << std::endl;
+		cout << "\n-- Formları Yürütme --" << endl;
 		lowRank.executeForm(shrubbery);
 		highRank.executeForm(shrubbery);
 		highRank.executeForm(robotomy);
 		highRank.executeForm(pardon);
-		std::cout << std::endl;
+		cout << endl;
 	} catch (const std::exception &e) {
-		std::cerr << "Hata: " << e.what() << std::endl;
+		cout << "Hata: " << e.what() << endl;
 	}
 
 	return 0;

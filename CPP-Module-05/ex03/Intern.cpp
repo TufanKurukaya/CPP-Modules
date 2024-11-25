@@ -27,22 +27,19 @@ AForm *Intern::makeForm(string formName, string target)
 	switch (i)
 	{
 		case 0:
-			std::cout << "Intern creates " << formName << std::endl;
+			cout << "Intern creates " << formName << std::endl;
 			return new ShrubberyCreationForm(target);
-			break;
 		case 1:
-			std::cout << "Intern creates " << formName << std::endl;
+			cout << "Intern creates " << formName << std::endl;
 			return new RobotomyRequestForm(target);
-			break;
 		case 2:
-			std::cout << "Intern creates " << formName << std::endl;
+			cout << "Intern creates " << formName << std::endl;
 			return new PresidentialPardonForm(target);
-			break;
 		default:
-			std::cout << "Intern couldn't find the form: " << formName << std::endl;
-			break;
+			cout << "Intern couldn't find the form: " << formName << std::endl;
+			return NULL;
 	}
-	return NULL;
+	
 }
 
 Intern::~Intern()

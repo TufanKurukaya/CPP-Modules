@@ -85,3 +85,5 @@ void Bureaucrat::signForm(Form &form)
 		std::cout << _name << " couldn’t sign " << form.GetName() << " because " << e.what() << "." << endl;
 	}
 }
+
+

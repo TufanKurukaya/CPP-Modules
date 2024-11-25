@@ -50,4 +50,5 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	if (!file.is_open())
 		throw std::exception();
 	file << "       _-_\n    /~~   ~~\\\n /~~         ~~\\\n{               }\n \\  _-     -_  /\n   ~  \\ //  ~\n_- -   | | _- _\n  _ -  | |   -_\n      // \\\n";
+	file.close();
 }
