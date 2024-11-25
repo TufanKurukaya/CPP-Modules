@@ -23,6 +23,10 @@ AForm::AForm(const AForm &oder) :	_name(oder._name),
 								_signGrade(oder._signGrade),
 								_execGrade(oder._execGrade)
 {
+	if (oder._signGrade < 1 || oder._execGrade < 1)
+		throw GradeTooHighException();
+	if (oder._signGrade > 150 || oder._execGrade > 150)
+		throw GradeTooLowException();
 }
 
 AForm::~AForm()

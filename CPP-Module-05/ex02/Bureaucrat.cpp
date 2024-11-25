@@ -73,10 +73,6 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 	return out;
 }
 
-
-
-//<bureaucrat> signed <form>
-//<bureaucrat> couldn’t sign <form> because <reason>.
 void Bureaucrat::signForm(AForm &form)
 {
 	try
@@ -84,9 +80,9 @@ void Bureaucrat::signForm(AForm &form)
 		form.beSigned(*this);
 		cout << _name << " signed " << form.GetName() << endl;
 	}
-	catch(const std::exception& e)
+	catch(const std::exception& e) 
 	{
-		std::cout << _name << " couldn’t sign " << form.GetName() << " because " << e.what() << "." << endl;;
+		std::cout << _name << " couldn’t sign " << form.GetName() << " because " << e.what() << "." << endl;
 	}
 }
 

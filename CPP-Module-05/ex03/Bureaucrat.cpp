@@ -73,10 +73,6 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 	return out;
 }
 
-
-
-//<bureaucrat> signed <form>
-//<bureaucrat> couldn’t sign <form> because <reason>.
 void Bureaucrat::signForm(AForm &form)
 {
 	try

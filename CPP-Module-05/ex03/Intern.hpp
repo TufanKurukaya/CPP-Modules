@@ -12,6 +12,7 @@ class Intern
 	public:
 		Intern();
 		Intern(const Intern &);
+		Intern &operator=(const Intern &);
 		AForm *makeForm(string formName, string target);
 		~Intern();
 };

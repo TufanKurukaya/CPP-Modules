@@ -22,6 +22,7 @@ int main() {
 		highRank.signForm(shrubbery);
 		highRank.signForm(robotomy);
 		highRank.signForm(pardon);
+		highRank.signForm(pardon);
 		std::cout << std::endl;
 		std::cout << shrubbery << "\n" << std::endl;
 		std::cout << robotomy << "\n" << std::endl;

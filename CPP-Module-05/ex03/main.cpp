@@ -15,12 +15,16 @@ int main() {
 
 	// Geçersiz form
 	AForm* invalidForm = someRandomIntern.makeForm("invalid form", "Nowhere");
-
-	// Bellek temizleme (oluşturulan formları serbest bırak)
+	if (invalidForm == NULL)
+		std::cout << "Invalid form is NULL" << std::endl;
 	delete shrubberyForm;
 	delete robotomyForm;
 	delete pardonForm;
-
+	{
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		delete rrf;
+	}
 	return 0;
 }
-
