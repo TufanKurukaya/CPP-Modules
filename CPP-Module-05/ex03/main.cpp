@@ -2,29 +2,41 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-#include "Intern.hpp"
 #include <iostream>
 
 int main() {
-	Intern someRandomIntern;
+	try {
+		Bureaucrat highRank("Alice", 1);
+		Bureaucrat lowRank("Bob", 150);
 
-	// Geçerli formlar
-	AForm* shrubberyForm = someRandomIntern.makeForm("shrubbery creation", "Backyard");
-	AForm* robotomyForm = someRandomIntern.makeForm("robotomy request", "Bender");
-	AForm* pardonForm = someRandomIntern.makeForm("presidential pardon", "Arthur Dent");
+		ShrubberyCreationForm shrubbery("Home");
+		RobotomyRequestForm robotomy("Bender");
+		PresidentialPardonForm pardon("Zaphod");
 
-	// Geçersiz form
-	AForm* invalidForm = someRandomIntern.makeForm("invalid form", "Nowhere");
-	if (invalidForm == NULL)
-		cout << "Invalid form is NULL" << endl;
-	delete shrubberyForm;
-	delete robotomyForm;
-	delete pardonForm;
-	{
-		Intern someRandomIntern;
-		AForm* rrf;
-		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-		delete rrf;
+		cout << shrubbery << "\n" << endl;
+		cout << robotomy << "\n" << endl;
+		cout << pardon << "\n" << endl;
+
+		cout << "\n-- Formları İmzalama --" << endl;
+		lowRank.signForm(shrubbery);
+		highRank.signForm(shrubbery);
+		highRank.signForm(robotomy);
+		highRank.signForm(pardon);
+		highRank.signForm(pardon);
+		cout << endl;
+		cout << shrubbery << "\n" << endl;
+		cout << robotomy << "\n" << endl;
+		cout << pardon << "\n" << endl;
+
+		cout << "\n-- Formları Yürütme --" << endl;
+		lowRank.executeForm(shrubbery);
+		highRank.executeForm(shrubbery);
+		highRank.executeForm(robotomy);
+		highRank.executeForm(pardon);
+		cout << endl;
+	} catch (const std::exception &e) {
+		cout << "Hata: " << e.what() << endl;
 	}
+
 	return 0;
 }

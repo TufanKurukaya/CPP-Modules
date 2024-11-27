@@ -3,9 +3,9 @@
 
 #include <iostream>
 
+using std::cout;
 using std::endl;
 using std::string;
-using std::cout;
 
 class Bureaucrat;
 
@@ -26,7 +26,7 @@ class AForm
 		virtual bool GetSigned() const;
 		const int &GetSignGrade() const;
 		const int &GetExecGrade() const;
-		virtual void beSigned(const Bureaucrat &bureaucrat) = 0;
+		void beSigned(const Bureaucrat &bureaucrat);
 		virtual void execute(Bureaucrat const & executor) const = 0;
 		class GradeTooHighException : public std::exception
 		{

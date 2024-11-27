@@ -12,9 +12,9 @@ int main()
 		bob.incrementGrade();
 	}
 	catch (const std::exception &e) {
-		cout << "Caught an exception: " << e.what() << endl;		
+		cout << "Caught an exception: " << e.what() << endl;
 	}
-
+	
 	cout << endl;
 
 	try

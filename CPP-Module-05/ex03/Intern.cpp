@@ -14,7 +14,8 @@ Intern::Intern(const Intern &oder)
 
 Intern &Intern::operator=(const Intern &oder)
 {
-	(void)oder;
+	if (this != &oder)
+		*this = oder;	
 	return *this;
 }
 

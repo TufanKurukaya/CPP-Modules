@@ -1,9 +1,7 @@
 #include "RobotomyRequestForm.hpp"
 #include <cstdlib>
-bool RobotomyRequestForm::GetSigned() const
-{
-	return _signed;
-}
+
+
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
 {
 }
@@ -31,20 +29,12 @@ RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
 
-void RobotomyRequestForm::beSigned(const Bureaucrat &bureaucrat)
-{
-	if (bureaucrat.getGrade() > _signGrade)
-		throw GradeTooLowException();
-	if (_signed == true)
-		throw FormAlreadySignedException();
-	_signed = true;
-}
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 	if (executor.getGrade() > _execGrade)
 		throw GradeTooLowException();
-	if (_signed == false)
+	if (GetSigned() == false)
 		throw FormNotSignedException();
 	srand(time(NULL));
 	bool success = rand() % 2;

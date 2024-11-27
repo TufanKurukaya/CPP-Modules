@@ -1,9 +1,5 @@
 #include "PresidentialPardonForm.hpp"
 
-bool PresidentialPardonForm::GetSigned() const
-{
-	return _signed;
-}
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5)
 {
@@ -31,20 +27,11 @@ PresidentialPardonForm::~PresidentialPardonForm()
 {
 }
 
-void PresidentialPardonForm::beSigned(const Bureaucrat &bureaucrat)
-{
-	if (bureaucrat.getGrade() > _signGrade)
-		throw GradeTooLowException();
-	if (_signed == true)
-		throw FormAlreadySignedException();
-	_signed = true;
-}
-
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	if (executor.getGrade() > _execGrade)
 		throw GradeTooLowException();
-	if (_signed == false)
+	if (GetSigned() == false)
 		throw FormNotSignedException();
 	cout << executor.getName() << " has been pardoned by Zafod Beeblebrox" << endl;
 }
