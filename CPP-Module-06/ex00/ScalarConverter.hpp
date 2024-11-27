@@ -19,6 +19,8 @@ class ScalarConverter
 		static bool isValidInt(const std::string& str);
 		static bool isValidFloat(const std::string& str);
 		ScalarConverter();
+		ScalarConverter(ScalarConverter const &);
+		ScalarConverter &operator=(ScalarConverter const &);
 		~ScalarConverter();
 	public:
 		static void convert(const string &input);

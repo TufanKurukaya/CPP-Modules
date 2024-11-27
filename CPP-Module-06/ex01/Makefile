@@ -1,7 +1,8 @@
-NAME = convert
+NAME = serializer
 
 SRCS =	main.cpp \
-		ScalarConverter.cpp
+		Serializer.cpp
+
 OBJ_DIR = .objs
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
