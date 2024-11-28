@@ -65,6 +65,7 @@ bool ScalarConverter::isValidInt(const std::string &str)
 				return false;
 		return true;
 }
+
 bool ScalarConverter::isValidFloat(const std::string &str)
 {
 	char *endPtr;
