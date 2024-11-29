@@ -1,84 +1,53 @@
 #include "MutantStack.hpp"
 #include <iostream>
-// int main()
-// {
-// 	MutantStack<int> mstack;
-// 	mstack.push(5);
-// 	mstack.push(17);
-// 	std::cout << mstack.top() << std::endl;
-// 	mstack.pop();
-// 	std::cout << mstack.size() << std::endl;
-// 	mstack.push(3);
-// 	mstack.push(5);
-// 	mstack.push(737);
-// 	//[...]
-// 	mstack.push(0);
-// 	MutantStack<int>::iterator it = mstack.begin();
-// 	MutantStack<int>::iterator ite = mstack.end();
-// 	++it;
-// 	--it;
-// 	while (it != ite)
-// 	{
-// 	std::cout << *it << std::endl;
-// 	++it;
-// 	}
-// 	std::stack<int> s(mstack);
-// 	return 0;
-// }
 
+int main()
+{
+	{
+		MutantStack<int> mstack;
+		mstack.push(5);
+		mstack.push(17);
+		cout << mstack.top() << endl;
+		mstack.pop();
+		cout << mstack.size() << endl;
+		mstack.push(3);
+		mstack.push(5);
+		mstack.push(737);
+		mstack.push(0);
+		MutantStack<int>::iterator it = mstack.begin();
+		MutantStack<int>::iterator ite = mstack.end();
+		++it;
+		--it;
+		while (it != ite)
+		{
+			cout << *it << endl;
+			++it;
+		}
+		std::stack<int> s(mstack);
+	}
+	cout << endl;
+	{
+		MutantStack<int, vector<int> > mstack;
+		mstack.push(5);
+		mstack.push(17);
+		cout << mstack.top() << endl;
+		mstack.pop();
+		cout << mstack.size() << endl;
+		mstack.push(3);
+		mstack.push(5);
+		mstack.push(737);
 
-int main() {
-    MutantStack<int> mstack;
-
-    // Push elements into the stack
-    mstack.push(10);
-    mstack.push(20);
-    mstack.push(30);
-    mstack.push(40);
-    mstack.push(50);
-
-    std::cout << "Top element after pushes: " << mstack.top() << std::endl;
-    std::cout << "Stack size after pushes: " << mstack.size() << std::endl;
-
-    // Pop an element
-    mstack.pop();
-    std::cout << "Top element after pop: " << mstack.top() << std::endl;
-    std::cout << "Stack size after pop: " << mstack.size() << std::endl;
-
-    // Using iterators to traverse the stack
-    std::cout << "Elements in the stack (using iterator):" << std::endl;
-    MutantStack<int>::iterator it = mstack.begin();
-    MutantStack<int>::iterator ite = mstack.end();
-    while (it != ite) {
-        std::cout << *it << std::endl;
-        ++it;
-    }
-
-    // Copy stack into a new stack (via constructor)
-    MutantStack<int> mstackCopy(mstack);
-    std::cout << "Top element of the copied stack: " << mstackCopy.top() << std::endl;
-
-    // Pop an element from copied stack and print
-    mstackCopy.pop();
-    std::cout << "Top element of the copied stack after pop: " << mstackCopy.top() << std::endl;
-
-    // Demonstrate stack to std::stack conversion
-    std::stack<int> stdStack(mstack);
-    std::cout << "Top element of the std::stack: " << stdStack.top() << std::endl;
-
-    // Additional operations on MutantStack
-    mstack.push(60);
-    mstack.push(70);
-    std::cout << "Top element after pushing new values: " << mstack.top() << std::endl;
-
-    // Iterate again to print elements
-    std::cout << "Final elements in the stack (using iterator):" << std::endl;
-    it = mstack.begin();
-    ite = mstack.end();
-    while (it != ite) {
-        std::cout << *it << std::endl;
-        ++it;
-    }
-
-    return 0;
+		mstack.push(0);
+		MutantStack<int, vector<int> >::iterator it = mstack.begin();
+		MutantStack<int, vector<int> >::iterator ite = mstack.end();
+		++it;
+		--it;
+		while (it != ite)
+		{
+			cout << *it << endl;
+			++it;
+		}
+		std::stack<int, vector<int> > s(mstack);
+	}
+	return 0;
 }
